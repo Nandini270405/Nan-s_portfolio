@@ -261,41 +261,53 @@ h3 {
   border-color: var(--teal);
 }
 
-.contact-form {
+.contact-methods {
   display: grid;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.form-input {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 10px 14px;
-  color: var(--text);
-  font-family: inherit;
-  font-size: 0.95rem;
-  transition: border-color 0.2s;
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: background 0.3s;
 }
 
-.form-input:focus {
-  outline: none;
+.contact-card:hover {
+  background: rgba(255, 255, 255, 0.08);
   border-color: var(--teal);
 }
 
-.status-msg {
+.contact-icon {
+  font-size: 2rem;
+  background: rgba(61, 215, 192, 0.1);
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+}
+
+.contact-info p {
+  margin: 0;
+  color: var(--muted);
   font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-info h3 {
   margin: 4px 0 0;
+  font-size: 1.1rem;
+  word-break: break-all;
 }
 
-.status-msg.success {
-  color: var(--teal);
-}
-
-.status-msg.error {
-  color: #ff6b6b;
-}
-
-/* Skeleton Loading */
 .skeleton {
   background: linear-gradient(
     90deg,

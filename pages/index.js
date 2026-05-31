@@ -295,7 +295,35 @@ export default function Home({ personalInfo, skills, projects, achievements, exp
             id="contact"
           >
             <h2>Get in Touch</h2>
-            <ContactForm />
+            <div className="contact-methods">
+              <motion.a 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={`mailto:${personalInfo.email}`} 
+                className="contact-card glass"
+              >
+                <span className="contact-icon">📧</span>
+                <div className="contact-info">
+                  <p>Email Me</p>
+                  <h3>{personalInfo.email}</h3>
+                </div>
+              </motion.a>
+              
+              <motion.a 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={personalInfo.linkedin} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="contact-card glass"
+              >
+                <span className="contact-icon">🔗</span>
+                <div className="contact-info">
+                  <p>LinkedIn</p>
+                  <h3>Nandini Kumari Biswal</h3>
+                </div>
+              </motion.a>
+            </div>
           </motion.section>
         </section>
       </main>
@@ -309,65 +337,6 @@ function Stat({ label, value }) {
       <p>{label}</p>
       <h3>{value}</h3>
     </article>
-  )
-}
-
-function ContactForm() {
-  const [status, setStatus] = useState('idle')
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('loading')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
-      if (res.ok) {
-        setStatus('success')
-        setFormData({ name: '', email: '', message: '' })
-      } else {
-        setStatus('error')
-      }
-    } catch (err) {
-      setStatus('error')
-    }
-  }
-
-  return (
-    <form className="contact-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Name"
-        required
-        value={formData.name}
-        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        className="form-input"
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        required
-        value={formData.email}
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        className="form-input"
-      />
-      <textarea
-        placeholder="Message"
-        required
-        value={formData.message}
-        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        className="form-input"
-        rows={4}
-      />
-      <button type="submit" className="btn btn-solid" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Sending...' : 'Send Message'}
-      </button>
-      {status === 'success' && <p className="status-msg success">Message sent! I'll get back to you soon.</p>}
-      {status === 'error' && <p className="status-msg error">Something went wrong. Please try again.</p>}
-    </form>
   )
 }
 
