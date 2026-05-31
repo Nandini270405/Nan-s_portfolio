@@ -1,0 +1,113 @@
+{
+  "personalInfo": {
+    "name": "Nandini Kumari Biswal",
+    "role": "Computer Science Engineering Student",
+    "bio": "I build practical software with a strong interest in AI/ML, problem solving, and clean user experiences. Currently pursuing B.Tech CSE at KIIT University.",
+    "email": "nandinibiswal2704@gmail.com",
+    "github": "https://github.com/Nandini270405",
+    "linkedin": "https://www.linkedin.com/in/nandini-kumari-b-882259293/",
+    "university": "KIIT (2023-2027)",
+    "degree": "B.Tech CSE",
+    "focus": "Software + AI/ML",
+    "nqtScore": "63.27%"
+  },
+  "skills": [
+    "Python",
+    "Java",
+    "C",
+    "Flask",
+    "Django",
+    "NumPy",
+    "Pandas",
+    "Scikit-learn",
+    "HTML",
+    "CSS",
+    "Git",
+    "VS Code",
+    "Jupyter Notebook"
+  ],
+  "projects": [
+    {
+      "title": "Weather Notifier",
+      "repo": "WEATHER-NOTIFIER",
+      "stack": "Python, Tkinter, OpenWeatherMap API",
+      "desc": "Real-time weather checker with city-based search, live data cards, and desktop reminders.",
+      "github": "https://github.com/Nandini270405/WEATHER-NOTIFIER",
+      "features": [
+        "Live weather retrieval by city using OpenWeatherMap API",
+        "Desktop-friendly Tkinter interface for quick access",
+        "Notification-focused design for daily weather updates",
+        "Simple and responsive weather data presentation"
+      ]
+    },
+    {
+      "title": "Python Messenger App",
+      "repo": "messenger-application",
+      "stack": "Python, Socket Programming, Tkinter",
+      "desc": "Desktop chat application built on client-server architecture with support for multiple users.",
+      "github": "https://github.com/Nandini270405/messenger-application",
+      "features": [
+        "Client-server chat architecture using Python sockets",
+        "Multi-user messaging workflow for real-time communication",
+        "Tkinter-based desktop GUI for chat interactions",
+        "Structured networking logic for sending and receiving messages"
+      ]
+    },
+    {
+      "title": "Moodify",
+      "repo": "moodify_final",
+      "stack": "Flask, MongoDB",
+      "desc": "Mood-based music recommendation app using emotion-aware logic for personalized playlists.",
+      "github": "https://github.com/Nandini270405/moodify_final",
+      "features": [
+        "Emotion-driven recommendation logic for tailored playlists",
+        "Flask backend serving a dynamic web interface",
+        "MongoDB persistence for user and recommendation data",
+        "Personalized music discovery flow based on mood inputs"
+      ]
+    },
+    {
+      "title": "Flood Shelter Recommendation System using Fuzzy Logic",
+      "repo": "FLOOD_SHELTER",
+      "stack": "Python, Flask, SQLite, NumPy, scikit-fuzzy, Tkinter, Bootstrap 5, Chart.js, Leaflet",
+      "desc": "Recommends safe flood shelters with fuzzy suitability scoring (0-100), ranked outputs, charts, map pins, and a JSON API. Supports CLI, desktop GUI, and web app interfaces.",
+      "github": "https://github.com/Nandini270405/FLOOD_SHELTER",
+      "features": [
+        "Fuzzy suitability score (0-100) and ranked shelter recommendations",
+        "CLI app, Tkinter desktop GUI, and Flask web app",
+        "Interactive map with shelter pins using Leaflet + OpenStreetMap",
+        "Visual score insights with bar and radar charts (Chart.js)",
+        "SQLite-backed geolocation data with /api/recommend JSON endpoint"
+      ]
+    }
+  ],
+  "achievements": [
+    { "text": "AWS Cloud Foundations, Architecting, and Data Engineering certificates" },
+    { "text": "TCS iON certifications in Python Development and Deep Neural Networks" },
+    { "text": "AWS Job Simulation Certificate (Forage)" },
+    {
+      "text": "Research paper published in IEEE Xplore (2025): Context-Aware, Multimodal, Time-Adaptive, and Explainable IAP Prediction",
+      "link": "https://ieeexplore.ieee.org/document/11326892"
+    }
+  ],
+  "experience": [
+    {
+      "company": "CSIR - Institute of Minerals and Materials Technology (IMMT), Bhubaneswar",
+      "role": "Intern",
+      "period": "May - June (2 months)",
+      "desc": "Working on research and development projects within the institute."
+    }
+  ],
+  "education": [
+    {
+      "school": "KIIT University",
+      "degree": "B.Tech in Computer Science Engineering",
+      "period": "2023-2027"
+    },
+    {
+      "school": "Narayan School, Maheshtala",
+      "degree": "CBSE: Class XII and Class X",
+      "period": "Schooling"
+    }
+  ]
+}
