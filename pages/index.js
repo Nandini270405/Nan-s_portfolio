@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import fs from 'fs'
 import path from 'path'
 import { useState, useMemo } from 'react'
@@ -39,6 +39,10 @@ export async function getStaticProps() {
 
 export default function Home({ personalInfo, skills, projects, achievements, experience = [], education }) {
   const [filter, setFilter] = useState('All')
+  const { scrollYProgress } = useScroll()
+  
+  const orbY1 = useTransform(scrollYProgress, [0, 1], [0, -150])
+  const orbY2 = useTransform(scrollYProgress, [0, 1], [0, 150])
 
   const categories = useMemo(() => {
     const cats = new Set(['All'])
@@ -74,8 +78,8 @@ export default function Home({ personalInfo, skills, projects, achievements, exp
       </Head>
 
       <main className="portfolio-shell">
-        <div className="orb orb-a" />
-        <div className="orb orb-b" />
+        <motion.div style={{ y: orbY1 }} className="orb orb-a" />
+        <motion.div style={{ y: orbY2 }} className="orb orb-b" />
 
         <section className="container">
           <motion.nav
@@ -164,12 +168,12 @@ export default function Home({ personalInfo, skills, projects, achievements, exp
                     <motion.article
                       key={project.title}
                       layout
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.3 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: index * 0.05 }}
                       className="project-card"
-                      whileHover={{ y: -6 }}
+                      whileHover={{ y: -6, transition: { duration: 0.2 } }}
                     >
                       <div className="project-header">
                         <span className="project-index">0{index + 1}</span>
